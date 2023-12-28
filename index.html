@@ -17,5 +17,92 @@
     ></script>
     <script src="./script.js" defer></script>
   </head>
-  <body></body>
+  <body class="bg-dark">
+    <div id="app">
+      <div class="container mt-4">
+        <div class="d-flex justify-content-end mb-3">
+          <div class="cart-summary">
+            <button class="btn btn-primary">
+              購物車 <span class="badge badge-light" id="cart-count">0</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 產品列表 -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="product1.jpg" class="card-img-top" alt="產品1" />
+              <div class="card-body">
+                <h5 class="card-title">產品1</h5>
+                <p class="card-text">$100</p>
+                <button class="btn btn-success add-to-cart">加入購物車</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card">
+              <img src="product2.jpg" class="card-img-top" alt="產品2" />
+              <div class="card-body">
+                <h5 class="card-title">產品2</h5>
+                <p class="card-text">$200</p>
+                <button class="btn btn-success add-to-cart">加入購物車</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card">
+              <img src="product2.jpg" class="card-img-top" alt="產品2" />
+              <div class="card-body">
+                <h5 class="card-title">產品2</h5>
+                <p class="card-text">$200</p>
+                <button class="btn btn-success add-to-cart">加入購物車</button>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="mt-5">購物車內容</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>產品名稱</th>
+                <th>價格</th>
+                <th>數量</th>
+                <th>小計</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+              <td>${productName}</td>
+              <td>$${productPrice}</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-secondary change-quantity"
+                  data-change="-1"
+                >
+                  -
+                </button>
+                <input type="number" value="1" min="1" class="item-quantity" />
+                <button
+                  class="btn btn-sm btn-secondary change-quantity"
+                  data-change="1"
+                >
+                  +
+                </button>
+              </td>
+              <td class="item-subtotal">$${productPrice}</td>
+              <td>
+                <button class="btn btn-sm btn-danger remove-item">移除</button>
+              </td>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-end">
+            <h4>總計：$<span id="total-price">0</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
